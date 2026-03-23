@@ -20,6 +20,7 @@ def workflow(input_data_path: str, n_estimators: int, max_depth: int, random_sta
 if __name__ == "__main__":
     fire.Fire(workflow)
 
+import mlflow
 mlflow.autolog()
 with mlflow.start_run():
     print('toto')

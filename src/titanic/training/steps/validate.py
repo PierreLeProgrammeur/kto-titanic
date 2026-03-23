@@ -47,7 +47,6 @@ def validate(model_path: str, x_test_path: str, y_test_path: str) -> None:
     else:
         feature_importance = {name: 0.0 for name in feature_names}
         logging.warning("Model does not have feature importance attributes")
-
     mlflow.log_metric("mse", mse) # Log des métriques dans mlflow
     mlflow.log_metric("mae", mae)
     mlflow.log_metric("r2", r2)
