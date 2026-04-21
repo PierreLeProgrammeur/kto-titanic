@@ -49,9 +49,7 @@ jobs:
           uv sync --group training
       - name: Configure docker and kubectl
         run: |
-          echo "${{secrets.QUAY_ROBOT_TOKEN}}" | docker login quay.io \
-            -u "${{vars.QUAY_ROBOT_USERNAME}}" \
-            --password-stdin
+          docker login -u="${{vars.QUAY_ROBOT_USERNAME}}" -p="${{secrets.QUAY_ROBOT_TOKEN}}" quay.io
           kubectl config set-cluster openshift-cluster --server=${{vars.OPENSHIFT_SERVER}}
           kubectl config set-credentials openshift-credentials --token=${{secrets.OPENSHIFT_TOKEN}}
           kubectl config set-context openshift-context --cluster=openshift-cluster --user=openshift-credentials --namespace=${{vars.OPENSHIFT_USERNAME}}-dev
