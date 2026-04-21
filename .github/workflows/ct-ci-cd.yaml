@@ -128,14 +128,4 @@ steps:
   - name: Stop services
     run: |
       curl -X POST $DAILYCLEAN_ROUTE_URL/pods/stop
-
-
-
-          # TODO: Saisir la suite de cette pipeline. Devrait apparaître : 
-          # Install depencies, Launch unit tests, Resync only training group,
-          # Configure docker and kubectl, Get Routes from Kubernetes and add them to env
-          # Wake up dailyclean and mlflow, Build training image, Launch mlflow training in Openshift.
-          # Une fois l'API développée, et sécurisée intégrer : 
-          # Download model artifact, Build and push api image, Configure API manifest with OAuth2 domain
-          # Deploy api to Openshift with OAuth2 protection, Get OAuth2 token for integration test
-          # Test api with OAuth2 authentication, Asleep kto-mlflow with dailyclean
+```
