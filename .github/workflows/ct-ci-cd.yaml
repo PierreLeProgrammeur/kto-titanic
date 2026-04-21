@@ -20,7 +20,7 @@ on:
 
 env:
   EXPERIMENT_NAME: kto-titanic
-  EXPERIMENT_IMAGE_NAME: quay.io/pierremoussue/titanic/experiment
+  EXPERIMENT_IMAGE_NAME: quay.io/pierremoussue/titanic:experiment
   API_IMAGE_NAME: quay.io/pierremoussue/titanic/api
   API_ROUTE_NAME: titanic-api
   DAILYCLEAN_ROUTE_NAME: dailyclean
